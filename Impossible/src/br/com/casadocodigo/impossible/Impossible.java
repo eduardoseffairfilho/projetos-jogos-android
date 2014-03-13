@@ -68,6 +68,13 @@ public class Impossible extends SurfaceView implements Runnable {
 		enemyRadius++;
 		canvas.drawCircle(enemyX, enemyY, enemyRadius, paint);
 	}
+   
+     private void drawScore(Canvas canvas) {
+       paint.setStyle(Style.FILL);
+       paint.setColor(Color.WHITE);
+       paint.setTextSize(50);
+  canvas.drawText(new String("Score:").concat(String.valueOf(score)), 50, 200, paint);
+     }
 	
 	public void moveDown(int pixels) {
 		System.out.println("Movendo o player...");
