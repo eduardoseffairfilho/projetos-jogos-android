@@ -50,6 +50,9 @@ public class Impossible extends SurfaceView implements Runnable {
 			if (gameOver) {
 				break;
 			}
+         
+         // atualiza o placar
+         drawScore(canvas);
 			
 			// atualiza e libera o canvas
 			holder.unlockCanvasAndPost(canvas);
