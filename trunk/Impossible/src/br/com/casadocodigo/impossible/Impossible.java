@@ -18,6 +18,7 @@ public class Impossible extends SurfaceView implements Runnable {
 	private float enemyX, enemyY, enemyRadius;
 	private double distance;
 	private boolean gameOver;
+  private int score;
 
 	public Impossible(Context context) {
 		super(context);
@@ -30,7 +31,7 @@ public class Impossible extends SurfaceView implements Runnable {
 		while (running) {
 			System.out.println("Impossible is Running...!");
 			
-			// verifica se a tela j· eset· pronta.
+			// verifica se a tela j√° eset√° pronta.
 			if (!holder.getSurface().isValid()) {
 				continue;
 			}
@@ -43,7 +44,7 @@ public class Impossible extends SurfaceView implements Runnable {
 			drawPlayer(canvas);
 			drawEnemy(canvas);
 			
-			// detecta a colis„o.
+			// detecta a colis√£o.
 			checkColision(canvas);
 			
 			if (gameOver) {
@@ -86,8 +87,12 @@ public class Impossible extends SurfaceView implements Runnable {
 		
 		// verifica a distancia entre os raios.
 		if (distance <= playerRadius + enemyRadius) {
-			System.out.println("Colis„o detectada...");
+			System.out.println("Colis√£o detectada...");
 			gameOver = true;
 		}
 	}
+  
+  private void addScore(int points) {
+    score += points;
+  }
 }
