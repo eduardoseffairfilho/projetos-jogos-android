@@ -10,23 +10,23 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 public class Game extends Activity implements OnTouchListener {
-	
+
 	Impossible view;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		// Coloca em fullscreen o jogo
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		
+
 		// Lógica do Jogo
 		view = new Impossible(this);
-		
+
 		// Touch Listener.
 		view.setOnTouchListener(this);
-		
+
 		// Configura view
 		setContentView(view);
 	}
@@ -34,17 +34,17 @@ public class Game extends Activity implements OnTouchListener {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		
+
 		Toast.makeText(Game.this, "Carregando o jogo...", Toast.LENGTH_LONG).show();
-		
+
 		view.resume();
 	}
 
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 		view.moveDown(10);
-      view.addScore(100);
+		view.addScore(100);
 		return true;
 	}
-	
+
 }
