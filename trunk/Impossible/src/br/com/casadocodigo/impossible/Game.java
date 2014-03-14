@@ -21,7 +21,7 @@ public class Game extends Activity implements OnTouchListener {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-		// LÃ³gica do Jogo
+		// Lógica do Jogo
 		view = new Impossible(this);
 
 		// Touch Listener.

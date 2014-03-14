@@ -32,7 +32,7 @@ public class Impossible extends SurfaceView implements Runnable {
 		while (running) {
 			System.out.println("Impossible is Running...!");
 
-			// verifica se a tela j√° eset√° pronta.
+			// verifica se a tela j· est· pronta.
 			if (!holder.getSurface().isValid()) {
 				continue;
 			}
@@ -45,7 +45,7 @@ public class Impossible extends SurfaceView implements Runnable {
 			drawPlayer(canvas);
 			drawEnemy(canvas);
 
-			// detecta a colis√£o.
+			// detecta a colis„o.
 			checkColision(canvas);
 
 			if (gameOver) {
@@ -76,9 +76,9 @@ public class Impossible extends SurfaceView implements Runnable {
 
 	private void drawScore(Canvas canvas) {
 		paint.setStyle(Style.FILL);
-		paint.setColor(Color.WHITE);
-		paint.setTextSize(50);
-		canvas.drawText(new String("Score:").concat(String.valueOf(score)), 50, 200, paint);
+		paint.setColor(Color.YELLOW);
+		paint.setTextSize(20);
+		canvas.drawText(new String("Score: ").concat(String.valueOf(score)), 5, 20, paint);
 	}
 
 	public void moveDown(int pixels) {
@@ -108,7 +108,7 @@ public class Impossible extends SurfaceView implements Runnable {
 		paint.setStyle(Style.FILL);
 		paint.setColor(Color.RED);
 		paint.setTextSize(70);
-		canvas.drawText("GAME OVER!", 30, 250, paint);
+		canvas.drawText("GAME OVER!", 30, 350, paint);
 		holder.unlockCanvasAndPost(canvas);
 	}
 
