@@ -49,6 +49,7 @@ public class Impossible extends SurfaceView implements Runnable {
 			checkColision(canvas);
 
 			if (gameOver) {
+				stopGame(canvas);
 				break;
 			}
 
@@ -101,6 +102,14 @@ public class Impossible extends SurfaceView implements Runnable {
 			System.out.println("Colisão detectada...");
 			gameOver = true;
 		}
+	}
+	
+	private void stopGame(Canvas canvas) {
+		paint.setStyle(Style.FILL);
+		paint.setColor(Color.RED);
+		paint.setTextSize(70);
+		canvas.drawText("GAME OVER!", 30, 250, paint);
+		holder.unlockCanvasAndPost(canvas);
 	}
 
 	public void addScore(int points) {
